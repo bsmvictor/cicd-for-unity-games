@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    name: Teste do Projeto 🧪
+    name: Testes 🧪
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -52,7 +52,7 @@ jobs:
           name: Resultados-Testes-${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.artifactsPath }}
   build:
-    name: Build do Jogo para WebGL 📦
+    name: Build WebGL 📦
     runs-on: ubuntu-latest
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
@@ -99,7 +99,7 @@ jobs:
           path: build/
 
   deploy:
-    name: Deploy para Itch.io 🚀
+    name: Deploy Itch.io 🚀
     runs-on: ubuntu-latest
     needs: build
 
@@ -114,7 +114,7 @@ jobs:
         uses: manleydev/butler-publish-itchio-action@v1.0.3
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          ITCH_GAME: tested-out
+          ITCH_GAME: unity-tcc-game
           ITCH_USER: bsmvictor
           CHANNEL: html5
           PACKAGE: build
