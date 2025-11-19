@@ -241,7 +241,7 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## Links Úteis
 
-- [Jogar no Itch.io](https://bsmvictor.itch.io/unity-tcc-game)
+- [Jogar no Itch.io](https://bsmvictor.itch.io/tested-out)
 - [Documentação do Unity](https://docs.unity3d.com/)
 - [GameCI Documentation](https://game.ci/docs)
 - [GitHub Actions Docs](https://docs.github.com/actions)
