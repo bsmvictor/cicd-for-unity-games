@@ -13,7 +13,7 @@ permissions:
   checks: write
   id-token: write
   pull-requests: write
-  
+
 jobs:
   test:
     name: Testes 🧪
@@ -98,6 +98,7 @@ jobs:
           projectPath: UnityGame
           unityVersion: 6000.0.50f1
           targetPlatform: WebGL
+          versioning: None
 
       - name: Upload do Artefato da Build
         uses: actions/upload-artifact@v4
