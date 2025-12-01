@@ -112,14 +112,14 @@ jobs:
         name: build-WebGL
         path: build
 
+    - name: Setup Butler
+      uses: buildalon/setup-butler@v1
+      with:
+        api-key: ${{ secrets.BUTLER_CREDENTIALS }}
+
     - name: Deploy para Itch.io
-      uses: yeslayla/butler-publish-itchio-action@master
       env:
         BUTLER_API_KEY: ${{ secrets.BUTLER_CREDENTIALS }}
-      with:
-        user: bsmvictor
-        game: unity-tcc-game
-        channel: html5
-        dir: build
-        version: ${{ github.run_number }}
-
+      run: |
+        butler push build bsmvictor/unity-tcc-game:html5 \
+          --userversion ${{ github.run_number }}
