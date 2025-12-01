@@ -113,7 +113,7 @@ jobs:
         path: build
 
     - name: Deploy para Itch.io
-      uses: itchio/butler-push@v1
+      uses: yeslayla/butler-publish-itchio-action@master
       env:
         BUTLER_API_KEY: ${{ secrets.BUTLER_CREDENTIALS }}
       with:
