@@ -48,7 +48,7 @@ jobs:
           testMode: ${{ matrix.testMode }}
           checkName: Testes (${{ matrix.testMode }})
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          customParameters: -nographics -burst-disable-compilation -noaudio
+          customParameters: -nographics -burst-disable-compilation -noaudio -job-worker-count 1
       - name: Upload dos resultados dos testes
         uses: actions/upload-artifact@v4
         if: success() || failure()
